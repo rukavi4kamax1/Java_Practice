@@ -1,6 +1,7 @@
 package homework.homework;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Order {
     private double price;
@@ -22,6 +23,20 @@ public class Order {
 
     public List<Pizza> getPizza() {
         return pizza;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Order order = (Order) o;
+        return Double.compare(order.price, price) == 0 &&
+                amount == order.amount &&
+                Objects.equals(pizza, order.pizza);
     }
 
     @Override

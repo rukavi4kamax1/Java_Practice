@@ -1,12 +1,16 @@
 package homework.homework;
 
+import homework.homework.enums.Cheese;
+import homework.homework.enums.Meat;
+import homework.homework.enums.Vegetables;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Waiter waiter = new Waiter("Oleh", 2, 21);
+        Waiter waiter = new Waiter("Oleh", 1, 21);
         PizzaCooker cooker = new PizzaCooker("Volodymyr", 10, 45);
         Pizza pizza1 = new Pizza(new Pizza.Dough("yeast"),
                 new Pizza.Filling(Vegetables.OLIVES,
@@ -27,5 +31,9 @@ public class Main {
             System.out.println(waiter.work(order));
             System.out.println(cooker.work(order));
         }
+        Vegetables.showVegetablesEnum();
+        Meat.showMeatEnum();
+        Cheese.showCheeseEnum();
+
     }
 }

@@ -1,5 +1,7 @@
 package homework.homework;
 
+import homework.homework.exception.WrongOrderException;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -19,6 +21,15 @@ public class Waiter extends Employee<Order> {
             Pizza pizza = iterator.next();
             System.out.println("\nAnswer the waiter: ");
             System.out.println("What is the size of pizza you'd like? ");
+            if (scanner.nextDouble() < 10) {
+                try {
+                    throw new WrongOrderException("The size of pizza is too small...");
+                } catch (WrongOrderException e) {
+                    e.printStackTrace();
+                } finally {
+                    System.out.println("Enter the size more than 10 the next time...");
+                }
+            }
             double size = scanner.nextDouble();
             pizza.setSize(size);
         }

@@ -1,6 +1,10 @@
 package homework.homework;
 
-public class Pizza {
+import homework.homework.enums.Cheese;
+import homework.homework.enums.Meat;
+import homework.homework.enums.Vegetables;
+
+public class Pizza implements Eatable {
     private Dough dough;
     private Filling filling;
     private double size;
@@ -53,6 +57,11 @@ public class Pizza {
                 '}';
     }
 
+    @Override
+    public String eat() {
+        return "Hmmm...This pizza is tasty";
+    }
+
     public static class Dough {
         private String name;
 
@@ -101,6 +110,14 @@ public class Pizza {
 
         public Meat getMeat() {
             return meat;
+        }
+
+        @Override
+        public int hashCode() {
+            int result = vegetables != null ? vegetables.hashCode() : 0;
+            result = 31 * result + (cheese != null ? cheese.hashCode() : 0);
+            result = 31 * result + (meat != null ? meat.hashCode() : 0);
+            return result;
         }
 
         @Override
