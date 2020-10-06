@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 public class Waiter extends Employee<Order> {
 
+    public Waiter(String name, double experience, int age) {
+        super(name, experience, age);
+    }
+
     @Override
     public Order work(Order order) {
         Scanner scanner = new Scanner(System.in);

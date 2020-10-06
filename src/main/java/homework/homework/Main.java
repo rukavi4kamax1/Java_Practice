@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Waiter waiter = new Waiter();
-        PizzaCooker cooker = new PizzaCooker();
+        Waiter waiter = new Waiter("Oleh", 2, 21);
+        PizzaCooker cooker = new PizzaCooker("Volodymyr", 10, 45);
         Pizza pizza1 = new Pizza(new Pizza.Dough("yeast"),
                 new Pizza.Filling(Pizza.Filling.Vegetable.OLIVES,
                         Pizza.Filling.Cheese.MOZZARELLA, Pizza.Filling.Meat.CHICKEN));

@@ -12,6 +12,10 @@ public class PizzaCooker extends Employee<Order> {
     private static final double MIN_PRICE = 100;
     private static final double STANDARD_SIZE = 30;
 
+    public PizzaCooker(String name, double experience, int age) {
+        super(name, experience, age);
+    }
+
     @Override
     public Order work(Order order) {
         List<Pizza> pizzas = order.getPizza();
