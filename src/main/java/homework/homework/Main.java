@@ -9,14 +9,14 @@ public class Main {
         Waiter waiter = new Waiter("Oleh", 2, 21);
         PizzaCooker cooker = new PizzaCooker("Volodymyr", 10, 45);
         Pizza pizza1 = new Pizza(new Pizza.Dough("yeast"),
-                new Pizza.Filling(Pizza.Filling.Vegetable.OLIVES,
-                        Pizza.Filling.Cheese.MOZZARELLA, Pizza.Filling.Meat.CHICKEN));
+                new Pizza.Filling(Vegetables.OLIVES,
+                       Cheese.MOZZARELLA, Meat.CHICKEN));
         Pizza pizza2 = new Pizza(new Pizza.Dough("puff"),
-                new Pizza.Filling(Pizza.Filling.Vegetable.MUSHROOMS,
-                        Pizza.Filling.Cheese.BRYNZA, Pizza.Filling.Meat.CHICKEN));
+                new Pizza.Filling(Vegetables.MUSHROOMS,
+                        Cheese.BRYNZA, Meat.CHICKEN));
         Pizza pizza3 = new Pizza(new Pizza.Dough("non-yeast"),
-                new Pizza.Filling(Pizza.Filling.Vegetable.TOMATOES,
-                        Pizza.Filling.Cheese.BRYNZA, Pizza.Filling.Meat.SAUSAGES));
+                new Pizza.Filling(Vegetables.TOMATOES,
+                        Cheese.BRYNZA, Meat.SAUSAGES));
         Order order1 = new Order(List.of(pizza1));
         Order order2 = new Order(List.of(pizza2, pizza1));
         Order order3 = new Order(List.of(pizza3));

@@ -69,29 +69,17 @@ public class Pizza {
     }
 
     public static class Filling {
-        private Vegetable vegetables;
+        private Vegetables vegetables;
         private Cheese cheese;
         private Meat meat;
 
-        public Filling(Vegetable vegetables, Cheese cheese, Meat meat) {
+        public Filling(Vegetables vegetables, Cheese cheese, Meat meat) {
             this.vegetables = vegetables;
             this.cheese = cheese;
             this.meat = meat;
         }
 
-        public enum Vegetable {
-            TOMATOES, CORNS, OLIVES, MUSHROOMS
-        }
-
-        public enum Cheese {
-            MOZZARELLA, PARMESAN, BRYNZA
-        }
-
-        public enum Meat {
-            CHICKEN, SAUSAGES
-        }
-
-        public void setVegetables(Vegetable vegetables) {
+        public void setVegetables(Vegetables vegetables) {
             this.vegetables = vegetables;
         }
 
@@ -103,7 +91,7 @@ public class Pizza {
             this.meat = meat;
         }
 
-        public Vegetable getVegetables() {
+        public Vegetables getVegetables() {
             return vegetables;
         }
 
