@@ -6,7 +6,7 @@ public enum Cheese {
 
     Cheese(double calories) {
         this.calories = calories;
-    }
+    }// конструктор із  додатковим параметром - калорійність
 
     Cheese() {
     }
@@ -14,9 +14,9 @@ public enum Cheese {
     @Override
     public String toString() {
         return name().toLowerCase() + ", ";
-    }
+    }// перевизначений метод toString()
 
-    public static String showCheeseEnum() {
+    public static String showCheeseEnum() {// власний метод для того, щоб не використовувати конкатенацію строк
         System.out.print("Cheese enum: ");
         StringBuilder stringBuilder = new StringBuilder();
         for (Cheese cheese : Cheese.values()) {

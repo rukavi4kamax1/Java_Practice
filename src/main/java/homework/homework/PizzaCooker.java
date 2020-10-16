@@ -1,9 +1,7 @@
 package homework.homework;
 
-import java.util.Iterator;
-import java.util.List;
-
-public class PizzaCooker extends Employee<Order> {
+//Клас, який наслідується від Employee
+public class PizzaCooker extends Employee<Pizza> {
     private static final double MAX_PRICE = 250;
     private static final double UPPER_INTERMEDIATE_PRICE = 220;
     private static final double INTERMEDIATE_PRICE = 200;
@@ -17,29 +15,25 @@ public class PizzaCooker extends Employee<Order> {
     }
 
     @Override
-    public Order work(Order order) {
-        List<Pizza> pizzas = order.getPizza();
-        Iterator<Pizza> iterator = pizzas.iterator();
-        while (iterator.hasNext()) {
-            Pizza pizza = iterator.next();
-            setPrice(pizza);
-        }
+    public Pizza work(Pizza pizza) {
+        setPrice(pizza);
         System.out.println("\nThe pizzas have been cooked. Info about them: ");
-        return order;
+        return pizza;
     }
 
+    //Метод для встановлення ціни на піцу
     private void setPrice(Pizza pizza) {
         Pizza.Filling filling = pizza.getFilling();
-        if (pizza.getFilling().getMeat() != null && pizza.getFilling().getCheese() != null
-                && pizza.getFilling().getVegetables() != null && pizza.getSize() > STANDARD_SIZE) {
+        if (filling.getMeat() != null && filling.getCheese() != null
+                && filling.getVegetables() != null && pizza.getSize() > STANDARD_SIZE) {
             pizza.setPrice(MAX_PRICE);
-        } else if (pizza.getFilling().getMeat() != null && pizza.getFilling().getCheese() != null
-                && pizza.getFilling().getVegetables() != null && pizza.getSize() < STANDARD_SIZE) {
+        } else if (filling.getMeat() != null && filling.getCheese() != null
+                && filling.getVegetables() != null && pizza.getSize() < STANDARD_SIZE) {
             pizza.setPrice(UPPER_INTERMEDIATE_PRICE);
-        } else if (pizza.getFilling().getMeat() != null && pizza.getFilling().getCheese() != null
+        } else if (filling.getMeat() != null && filling.getCheese() != null
                 && pizza.getSize() > STANDARD_SIZE) {
             pizza.setPrice(INTERMEDIATE_PRICE);
-        } else if (pizza.getFilling().getMeat() != null && pizza.getFilling().getCheese() != null
+        } else if (filling.getMeat() != null && filling.getCheese() != null
                 && pizza.getSize() < STANDARD_SIZE) {
             pizza.setPrice(UPPER_BEGINNER_PRICE);
         } else if (pizza.getSize() > STANDARD_SIZE) {

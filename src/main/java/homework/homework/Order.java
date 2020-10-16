@@ -3,6 +3,8 @@ package homework.homework;
 import java.util.List;
 import java.util.Objects;
 
+//Між класом Order i Waiter наявна асоціація
+//Офіціант може взяти замовлення, між ними є певний зв'язок
 public class Order {
     private double price;
     private int amount;
@@ -25,6 +27,7 @@ public class Order {
         return pizza;
     }
 
+    //перевизначений метод equals()
     @Override
     public boolean equals(Object o) {
         if (this == o) {

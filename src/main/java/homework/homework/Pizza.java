@@ -4,6 +4,8 @@ import homework.homework.enums.Cheese;
 import homework.homework.enums.Meat;
 import homework.homework.enums.Vegetables;
 
+// Клас, який імплементує інтерфейс Eatable
+// Між піцою та піцайолою наявна асоціація(піцайола готує піцу)
 public class Pizza implements Eatable {
     private Dough dough;
     private Filling filling;
@@ -62,6 +64,7 @@ public class Pizza implements Eatable {
         return "Hmmm...This pizza is tasty";
     }
 
+    //Внутрішній клас - nested class(тісто)
     public static class Dough {
         private String name;
 
@@ -77,6 +80,7 @@ public class Pizza implements Eatable {
         }
     }
 
+    //Внутрішній клас - nested class(начинка в піці)
     public static class Filling {
         private Vegetables vegetables;
         private Cheese cheese;
@@ -112,6 +116,7 @@ public class Pizza implements Eatable {
             return meat;
         }
 
+        // перевизначений hashCode()
         @Override
         public int hashCode() {
             int result = vegetables != null ? vegetables.hashCode() : 0;

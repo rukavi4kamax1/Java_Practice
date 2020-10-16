@@ -7,7 +7,7 @@ public enum Vegetables {
 
     Vegetables(double calories) {
         this.calories = calories;
-    }
+    }// конструктор із  додатковим параметром - калорійність
 
     Vegetables() {
     }
@@ -15,9 +15,9 @@ public enum Vegetables {
     @Override
     public String toString() {
         return name().toLowerCase() + ", ";
-    }
+    }// перевизначений метод toString()
 
-    public static String showVegetablesEnum() {
+    public static String showVegetablesEnum() {// власний метод для того, щоб не використовувати конкатенацію строк
         System.out.print("Vegetables enum: ");
         StringBuilder stringBuilder = new StringBuilder();
         for (Vegetables vegetable : Vegetables.values()) {

@@ -6,12 +6,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+//Клас, який наслідується від Employee
 public class Waiter extends Employee<Order> {
 
     public Waiter(String name, double experience, int age) {
         super(name, experience, age);
     }
 
+    //Метод, який імітує взяття замовлення офіціантом
     @Override
     public Order work(Order order) {
         Scanner scanner = new Scanner(System.in);
@@ -22,6 +24,7 @@ public class Waiter extends Employee<Order> {
             System.out.println("\nAnswer the waiter: ");
             System.out.println("What is the size of pizza you'd like? ");
             if (scanner.nextDouble() < 10) {
+                // використання власного WrongOrderException та обробка помилка в блоці try-catch-finally
                 try {
                     throw new WrongOrderException("The size of pizza is too small...");
                 } catch (WrongOrderException e) {
