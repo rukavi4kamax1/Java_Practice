@@ -1,6 +1,8 @@
 package homework.homework;
 
 //Клас, який наслідується від Employee
+//Між цим класом та класом Pizza існує асоціація
+//піцайола може приготувати піцу
 public class PizzaCooker extends Employee<Pizza> {
     private static final double MAX_PRICE = 250;
     private static final double UPPER_INTERMEDIATE_PRICE = 220;
@@ -23,7 +25,7 @@ public class PizzaCooker extends Employee<Pizza> {
 
     //Метод для встановлення ціни на піцу
     private void setPrice(Pizza pizza) {
-        Pizza.Filling filling = pizza.getFilling();
+        Filling filling = pizza.getFilling();
         if (filling.getMeat() != null && filling.getCheese() != null
                 && filling.getVegetables() != null && pizza.getSize() > STANDARD_SIZE) {
             pizza.setPrice(MAX_PRICE);

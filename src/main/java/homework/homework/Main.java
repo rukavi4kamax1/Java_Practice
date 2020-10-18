@@ -19,13 +19,13 @@ public class Main {
 
         //Створення об'єктів піц
         Pizza pizza1 = new Pizza(new Pizza.Dough("yeast"),
-                new Pizza.Filling(Vegetables.OLIVES,
+                new Filling(Vegetables.OLIVES,
                        Cheese.MOZZARELLA, Meat.CHICKEN));
         Pizza pizza2 = new Pizza(new Pizza.Dough("puff"),
-                new Pizza.Filling(Vegetables.MUSHROOMS,
+                new Filling(Vegetables.MUSHROOMS,
                         Cheese.BRYNZA, Meat.CHICKEN));
         Pizza pizza3 = new Pizza(new Pizza.Dough("non-yeast"),
-                new Pizza.Filling(Vegetables.TOMATOES,
+                new Filling(Vegetables.TOMATOES,
                         Cheese.BRYNZA, Meat.SAUSAGES));
 
         //Створення об'єктів замовлень
